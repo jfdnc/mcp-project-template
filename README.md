@@ -92,7 +92,7 @@ Check out [MCP-SEED-PROMPT-EXAMPLES.md](./.setup/MCP-SEED-PROMPT-EXAMPLES.md) fo
 - API monitoring tools
 - Multi-service integrations
 
-The template handles the scaffolding. You focus on the business logic.
+Fire up your local LLM assistant in this repo, paste in an example, and 💸 watch those tokens fly 💸
 
 ## TODO
 - [ ] TypeScript template
