@@ -71,10 +71,6 @@ Instead of starting from scratch, your LLM gets:
 ```bash
 # Run the setup script
 npm run setup
-
-# Or if you install globally:
-npm install -g .
-mcp-setup
 ```
 
 **Option 2: Manual setup**
