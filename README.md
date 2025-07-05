@@ -69,7 +69,6 @@ Instead of starting from scratch, your LLM gets:
 
 **Option 1: Use the CLI (recommended)**
 ```bash
-# Run the setup script
 npm run setup
 ```
 
