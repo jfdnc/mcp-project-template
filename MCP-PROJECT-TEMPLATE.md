@@ -1,4 +1,4 @@
-# MCP Project Template v2
+# MCP Project Template
 
 A production-ready architecture pattern for building robust Model Context Protocol (MCP) projects with proper error handling, observability, and scalability.
 

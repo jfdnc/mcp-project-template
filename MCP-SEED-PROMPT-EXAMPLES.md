@@ -1,11 +1,11 @@
 # MCP Project Generation Prompts
 
-Here are effective prompts to generate working MCP projects from this template:
+Here are some effective prompts to generate working MCP projects from [the project template](./MCP-PROJECT-TEMPLATE.md). Check out [the seed prompt template](./MCP-SEED-PROMPT-TEMPLATE.md) to get your local codegen assistant (Claude Code, etc), to help spin up a template for your application:
 
 ## Basic Project Generation
 
 ### 1. Domain-Specific MCP Server
-
+```markdown
 Using the MCP template provided, create a working MCP server for managing GitHub repositories.
 
 **Tools needed:**
@@ -15,9 +15,10 @@ Using the MCP template provided, create a working MCP server for managing GitHub
 - `getRepoStats`: Get statistics for a repository
 
 Use the GitHub REST API. Each tool should follow the BaseTool pattern from the template. Include proper error handling and rate limiting.
+```
 
 ### 2. Integration-Focused Project
-
+```markdown
 Based on the MCP template, build an MCP server that integrates Slack and Google Calendar.
 
 **Requirements:**
@@ -27,11 +28,12 @@ Based on the MCP template, build an MCP server that integrates Slack and Google 
 - Composition tool that chains the above operations
 
 Follow the template's service pattern for Slack/Google API abstractions. Include OAuth token management in the config.
+```
 
 ## Advanced Generation Prompts
 
 ### 3. Full-Stack with Client Usage
-
+```markdown
 Create a complete MCP project using the template for a personal task automation system:
 
 **Server tools:**
@@ -46,9 +48,10 @@ Create a complete MCP project using the template for a personal task automation 
 - Integration tests using the test utilities
 
 Ensure all tools extend BaseTool and implement proper permissions.
+```
 
 ### 4. Data Processing Pipeline
-
+```markdown
 Using the MCP template, implement a data processing pipeline MCP server:
 
 **Core tools:**
@@ -64,11 +67,12 @@ Using the MCP template, implement a data processing pipeline MCP server:
 - Tool composition for multi-step pipelines
 
 Include example pipelines in the examples/ directory.
+```
 
 ## Specific Pattern Implementation
 
 ### 5. Middleware-Focused Implementation
-
+```markdown
 Create an MCP server for API monitoring using the template:
 
 **Base tools:**
@@ -83,9 +87,10 @@ Create an MCP server for API monitoring using the template:
 - Audit logging middleware for all tool calls
 
 Show how each middleware integrates with the registry pattern.
+```
 
 ### 6. Migration from Existing Code
-
+```markdown
 I have this existing code for managing AWS resources:
 ```
 [paste existing code]
@@ -98,11 +103,12 @@ Refactor this into an MCP server using the provided template:
 - Implement retry logic for transient AWS errors
 - Add CloudWatch metrics integration
 - Create comprehensive tests using test-utils.js
+```
 
 ## Targeted Component Generation
 
 ### 7. Tool-Specific Generation
-
+```markdown
 Using the BaseTool class from the template, create a tool for:
 
 **Name:** `generateReport`
@@ -120,9 +126,10 @@ Using the BaseTool class from the template, create a tool for:
 - Permissions: ['reports:generate']
 - Store generated reports in services/storage.js
 - Return signed URL valid for 1 hour
+```
 
 ### 8. Service Layer Generation
-
+```markdown
 Create a service module (`src/services/database.js`) following the template pattern:
 
 **Requirements:**
@@ -138,11 +145,12 @@ Create a service module (`src/services/database.js`) following the template patt
 - `runMigrations`: Execute pending migrations
 
 Follow the platform abstraction pattern from the template.
+```
 
 ## Testing-Focused Prompts
 
 ### 9. Test Suite Generation
-
+```markdown
 Using the test utilities from the template, create comprehensive tests for an email MCP server with these tools:
 - `sendEmail`
 - `getInbox`
@@ -155,11 +163,12 @@ Using the test utilities from the template, create comprehensive tests for an em
 - Rate limit testing
 - Permission testing
 - Performance benchmarks
+```
 
 ## Configuration Variants
 
 ### 10. Multi-Environment Setup
-
+```markdown
 Extend the template's configuration system for a payment processing MCP server:
 
 **Environments needed:**
@@ -174,6 +183,7 @@ Extend the template's configuration system for a payment processing MCP server:
 - Implement provider abstraction in services/
 - Add appropriate middleware for each environment
 - Setup monitoring differently per environment
+```
 
 ## Best Prompt Practices
 
@@ -183,19 +193,3 @@ Extend the template's configuration system for a payment processing MCP server:
 4. **Reference template patterns** - "Follow the BaseTool pattern", "Use the service abstraction"
 5. **Request examples** - Ask for example usage or test cases
 6. **Specify integrations** - Name external services/APIs to integrate
-
-## Meta-Prompt for Custom Domains
-
-I want to build an MCP server for **[DOMAIN]**.
-
-Analyze this domain and:
-- Suggest 5-7 tools that would be most useful
-- Identify external services to integrate
-- Determine necessary middleware (caching, rate limiting, etc)
-- Propose a service layer structure
-- Generate the implementation using the MCP template
-
-**Domain:** [YOUR DOMAIN HERE]
-**Additional requirements:** [ANY SPECIFIC NEEDS]
-
-These prompts leverage the template's structure while providing enough specificity to generate working, production-ready code that follows the established patterns.
