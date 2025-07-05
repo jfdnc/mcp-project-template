@@ -6,6 +6,40 @@ Spin up a production-ready MCP server via cli helper, optionally ingest your pro
 
 This repo contains everything you need to prompt a local LLM (like Claude Code) to generate a complete MCP server from scratch. Think of it as a smart template that your AI assistant can read and implement.
 
+### Default project layout:
+```
+project-root/
+├── src/
+│   ├── core/
+│   │   ├── server.js          # Enhanced MCP server with middleware
+│   │   ├── client.js          # MCP client with retry logic
+│   │   ├── middleware.js      # Request/response interceptors
+│   │   └── base-tool.js       # Base tool class
+│   ├── tools/
+│   │   ├── registry.js        # Tool registry with versioning
+│   │   ├── index.js           # Tool exports
+│   │   └── [domain]/          # Domain-specific tools
+│   │       └── [tool-name].js
+│   ├── services/              # Business logic
+│   ├── config/
+│   │   ├── index.js           # Configuration management
+│   │   └── schemas.js         # Config validation
+│   ├── errors/
+│   │   └── index.js           # Error taxonomy
+│   ├── observability/
+│   │   ├── logger.js          # Structured logging
+│   │   └── metrics.js         # Metrics collection
+│   └── utils/
+│       └── validation.js      # Shared validators
+├── test/
+│   ├── fixtures/
+│   └── test-utils.js          # Testing utilities
+├── examples/                  # Example implementations
+├── package.json
+├── tsconfig.json             # Optional TypeScript config
+└── .env.example
+```
+
 ## The Pieces
 
 - **[MCP-PROJECT-TEMPLATE.md](./.setup/MCP-PROJECT-TEMPLATE.md)** - The full architectural blueprint with code examples
