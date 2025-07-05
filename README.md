@@ -46,7 +46,7 @@ project-root/
   - Code entities intentionally live in this doc rather than being pre-made at the root so you can configure via consulting with your LLM assistant on parts you do and don't want to generate.
 - **[MCP-SEED-PROMPT-TEMPLATE.md](./.setup/MCP-SEED-PROMPT-TEMPLATE.md)** - A fill-in-the-blank prompt template
 - **[MCP-SEED-PROMPT-EXAMPLES.md](./.setup/MCP-SEED-PROMPT-EXAMPLES.md)** - Real examples of prompts that work
-- **setup.js** - Interactive CLI to generate custom prompts (in `.setup/`)
+- **[setup.js](.setup/setup.js)** - Interactive CLI to generate custom prompt.
 
 ## How to Use
 
