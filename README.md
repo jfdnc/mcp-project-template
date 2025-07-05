@@ -68,3 +68,4 @@ The template handles the scaffolding. You focus on the business logic.
 ## TODO
 - [ ] TypeScript template
 - [ ] Other language templates
+  - [ ] Extend setup script to nuke node-specific parts for non-JS projects
