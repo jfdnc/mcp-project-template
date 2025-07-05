@@ -1,0 +1,1 @@
+**Paste in or write a general project planning doc for your MCP application here.**

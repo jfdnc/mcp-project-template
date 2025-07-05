@@ -16,6 +16,7 @@ This repo contains everything you need to prompt a local LLM (like Claude Code) 
 
 ## How to Use
 
+0. **(Optional) Planning doc setup** - Fill out [planning.md](./planning.md) with your MCP project details
 1. **Run the setup CLI** - `npm run setup` (or `npm start`)
 2. **Answer the prompts** - Tell it what domain you want to build and any specific requirements
 3. **Get your custom prompt** - The CLI generates a tailored prompt and copies it to your clipboard

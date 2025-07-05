@@ -59,8 +59,7 @@ function findPlanningDocs() {
   try {
     const files = readdirSync(rootDir);
     return files.filter(file => {
-      const ext = file.toLowerCase();
-      return (ext.endsWith('.md') || ext.endsWith('.txt')) && !file.startsWith('README');
+      return (file.startsWith('planning'));
     });
   } catch (error) {
     return [];
@@ -86,15 +85,15 @@ async function main() {
   // Check for planning documents
   const planningDocs = findPlanningDocs();
   let planningContent = '';
-  
+
   if (planningDocs.length > 0) {
     log('📋 Found planning documents in root directory:', 'cyan');
     planningDocs.forEach((doc, index) => {
       log(`  ${index + 1}. ${doc}`);
     });
-    
+
     const useDoc = await ask(colors.cyan + '\nWould you like to use one of these planning documents? (y/N): ' + colors.reset);
-    
+
     if (useDoc.toLowerCase() === 'y') {
       let selectedDoc;
       if (planningDocs.length === 1) {
@@ -110,7 +109,7 @@ async function main() {
           log('Invalid selection, proceeding without planning document.', 'yellow');
         }
       }
-      
+
       if (selectedDoc) {
         try {
           const rootDir = join(__dirname, '..');
