@@ -92,9 +92,8 @@ Show how each middleware integrates with the registry pattern.
 ### 6. Migration from Existing Code
 ```markdown
 I have this existing code for managing AWS resources:
-```
+
 [paste existing code]
-```
 
 Refactor this into an MCP server using the provided template:
 - Extract each function as a separate tool extending BaseTool
