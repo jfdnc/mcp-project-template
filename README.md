@@ -95,6 +95,12 @@ Check out [MCP-SEED-PROMPT-EXAMPLES.md](./.setup/MCP-SEED-PROMPT-EXAMPLES.md) fo
 Fire up your local LLM assistant in this repo, paste in an example, and 💸 watch those tokens fly 💸
 
 ## TODO
+- [ ] Minimize LLM calls
+  - [ ] Determine minimal common source code entities, prepopulate stubs
+  - [ ] More granualar config in setup tool
+  - [ ] "hackathon" -> ... -> prod levels of generation (observability stuff, etc prob not needed for personal projects)
+    - [ ] Identify features to build in
+- [ ] Copy initial generated prompt to local file as well as system clipboard
 - [ ] TypeScript template
 - [ ] Other language templates
   - [ ] Extend setup script to nuke node-specific parts for non-JS projects
