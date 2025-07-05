@@ -1,6 +1,6 @@
 # MCP Project Template
 
-Got a local LLM? Want to spin up a production-ready MCP server fast? You're in the right place.
+Spin up a production-ready MCP server via cli helper, optionally ingest your project planning doc.
 
 ## What's This?
 
@@ -9,6 +9,7 @@ This repo contains everything you need to prompt a local LLM (like Claude Code) 
 ## The Pieces
 
 - **[MCP-PROJECT-TEMPLATE.md](./.setup/MCP-PROJECT-TEMPLATE.md)** - The full architectural blueprint with code examples
+  - Code entities intentionally live in this doc rather than being pre-made at the root so you can configure via consulting with your LLM assistant on parts you do and don't want to generate.
 - **[MCP-SEED-PROMPT-TEMPLATE.md](./.setup/MCP-SEED-PROMPT-TEMPLATE.md)** - A fill-in-the-blank prompt template
 - **[MCP-SEED-PROMPT-EXAMPLES.md](./.setup/MCP-SEED-PROMPT-EXAMPLES.md)** - Real examples of prompts that work
 - **setup.js** - Interactive CLI to generate custom prompts (in `.setup/`)
@@ -50,7 +51,7 @@ cp .setup/MCP-SEED-PROMPT-TEMPLATE.md my-prompt.md
 # Then paste the whole thing into your AI assistant
 ```
 
-Your AI will generate a complete MCP server with proper structure, error handling, and all the production-ready stuff you'd want but don't want to write by hand.
+This will allow your LLM assistant to generate a complete MCP server with proper structure, error handling, and all the production-ready stuff you'd want but don't want to write by hand.
 
 ## Examples
 
@@ -61,4 +62,4 @@ Check out [MCP-SEED-PROMPT-EXAMPLES.md](./.setup/MCP-SEED-PROMPT-EXAMPLES.md) fo
 - API monitoring tools
 - Multi-service integrations
 
-The template handles the boring infrastructure stuff. You focus on the business logic.
+The template handles the scaffolding. You focus on the business logic.
