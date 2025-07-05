@@ -51,7 +51,7 @@ project-root/
 ## How to Use
 
 0. **(Optional) Planning doc setup** - Fill out [planning.md](./planning.md) with your MCP project details
-1. **Run the setup CLI** - `npm run setup` (or `npm start`)
+1. **Run the setup CLI** - `npm run setup`
 2. **Answer the prompts** - Tell it what domain you want to build and any specific requirements
 3. **Get your custom prompt** - The CLI generates a tailored prompt and copies it to your clipboard
 4. **Feed it to your LLM** - Paste into Claude Code, Cursor, or whatever local AI you're using
