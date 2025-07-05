@@ -64,3 +64,7 @@ Check out [MCP-SEED-PROMPT-EXAMPLES.md](./.setup/MCP-SEED-PROMPT-EXAMPLES.md) fo
 - Multi-service integrations
 
 The template handles the scaffolding. You focus on the business logic.
+
+## TODO
+- [ ] TypeScript template
+- [ ] Other language templates
