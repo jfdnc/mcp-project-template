@@ -74,9 +74,9 @@ async function main() {
   // Read the template
   let template;
   try {
-    template = readFileSync(__dirname + '/.setup/MCP-SEED-PROMPT-TEMPLATE.md', 'utf8');
+    template = readFileSync(__dirname + '/MCP-SEED-PROMPT-TEMPLATE.md', 'utf8');
   } catch (error) {
-    log('❌ Error: Could not read .setup/MCP-SEED-PROMPT-TEMPLATE.md', 'red');
+    log('❌ Error: Could not read MCP-SEED-PROMPT-TEMPLATE.md', 'red');
     log('Make sure you\'re running this from the project root directory.', 'yellow');
     process.exit(1);
   }
