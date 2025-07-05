@@ -1,0 +1,29 @@
+{
+  "name": "mcp-project-template",
+  "version": "1.0.0",
+  "description": "Template and CLI for generating MCP servers with local LLMs",
+  "type": "module",
+  "bin": {
+    "mcp-setup": "./.setup/setup.js"
+  },
+  "scripts": {
+    "setup": "node .setup/setup.js",
+    "start": "node .setup/setup.js"
+  },
+  "files": [
+    ".setup/",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "template",
+    "cli",
+    "code-generation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
