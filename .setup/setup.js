@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import { readFileSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { createInterface } from 'readline';
 import { exec } from 'child_process';
 import { promisify } from 'util';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -54,6 +54,19 @@ async function copyToClipboard(text) {
   }
 }
 
+function findPlanningDocs() {
+  const rootDir = join(__dirname, '..');
+  try {
+    const files = readdirSync(rootDir);
+    return files.filter(file => {
+      const ext = file.toLowerCase();
+      return (ext.endsWith('.md') || ext.endsWith('.txt')) && !file.startsWith('README');
+    });
+  } catch (error) {
+    return [];
+  }
+}
+
 async function main() {
   log('🚀 MCP Project Template Setup', 'bold');
   log('='.repeat(40), 'cyan');
@@ -70,6 +83,46 @@ async function main() {
 
   log('\nI\'ll help you generate a prompt for your local LLM to create an MCP server.\n', 'green');
 
+  // Check for planning documents
+  const planningDocs = findPlanningDocs();
+  let planningContent = '';
+  
+  if (planningDocs.length > 0) {
+    log('📋 Found planning documents in root directory:', 'cyan');
+    planningDocs.forEach((doc, index) => {
+      log(`  ${index + 1}. ${doc}`);
+    });
+    
+    const useDoc = await ask(colors.cyan + '\nWould you like to use one of these planning documents? (y/N): ' + colors.reset);
+    
+    if (useDoc.toLowerCase() === 'y') {
+      let selectedDoc;
+      if (planningDocs.length === 1) {
+        selectedDoc = planningDocs[0];
+        log(`Using: ${selectedDoc}`, 'green');
+      } else {
+        const docChoice = await ask(colors.cyan + 'Which document? (enter number): ' + colors.reset);
+        const docIndex = parseInt(docChoice) - 1;
+        if (docIndex >= 0 && docIndex < planningDocs.length) {
+          selectedDoc = planningDocs[docIndex];
+          log(`Using: ${selectedDoc}`, 'green');
+        } else {
+          log('Invalid selection, proceeding without planning document.', 'yellow');
+        }
+      }
+      
+      if (selectedDoc) {
+        try {
+          const rootDir = join(__dirname, '..');
+          planningContent = readFileSync(join(rootDir, selectedDoc), 'utf8');
+          log('✅ Planning document loaded successfully!', 'green');
+        } catch (error) {
+          log('❌ Error reading planning document. Proceeding without it.', 'yellow');
+        }
+      }
+    }
+  }
+
   // Get domain info
   const domain = await ask(colors.cyan + 'What domain/service do you want to build? (e.g., "GitHub repository management", "file processing", "API monitoring"): ' + colors.reset);
 
@@ -85,7 +138,8 @@ async function main() {
   let filledTemplate = template
     .replace(/\[DOMAIN\]/g, domain)
     .replace(/\[INFO ABOUT YOUR DOMAIN HERE\]/g, domain)
-    .replace(/\[ANY SPECIFIC NEEDS\]/g, requirements || 'Standard MCP server implementation');
+    .replace(/\[ANY SPECIFIC NEEDS\]/g, requirements || 'Standard MCP server implementation')
+    .replace(/\[PLANNING_CONTENT\]/g, planningContent || 'No planning document provided');
 
   log('\n' + '='.repeat(60), 'green');
   log('✅ Generated your MCP project prompt!', 'bold');

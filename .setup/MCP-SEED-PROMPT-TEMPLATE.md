@@ -9,3 +9,4 @@ Analyze this domain and:
 
 **Domain:** [INFO ABOUT YOUR DOMAIN HERE]
 **Additional requirements:** [ANY SPECIFIC NEEDS]
+**Planning document:** [PLANNING_CONTENT]
