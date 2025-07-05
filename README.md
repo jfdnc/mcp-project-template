@@ -57,7 +57,7 @@ project-root/
 4. **Feed it to your LLM** - Paste into Claude Code, Cursor, or whatever local AI you're using
 5. **Get a working MCP server** - Your AI will generate a complete implementation following the production-ready patterns
 
-## Why This Works
+## Why This Is Helpful
 
 Instead of starting from scratch, your LLM gets:
 - A complete architectural pattern with middleware, error handling, and observability
